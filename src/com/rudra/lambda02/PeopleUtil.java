@@ -2,6 +2,7 @@ package com.rudra.lambda02;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Created by abhishek.
@@ -25,15 +26,22 @@ public class PeopleUtil {
 
         // 2. filter out all the people whose lastName starts with 'C' or 'c'
         System.out.println("\n ********* People have lastName startWith \"C\" or \"c\" ******** ");
+
+        // we can introduce a behavior (NameList) which can perform the conditional check for us
+
+        /*printAll(people.getPeople(),(p)->{
+            return p.getLastname().startsWith("C")||p.getLastname().startsWith("c");
+        });
+        */
+
+        // ( or ) we can reuse the generic functional behavior provided by java8 .
         printAll(people.getPeople(),(p)->{
             return p.getLastname().startsWith("C")||p.getLastname().startsWith("c");
         });
 
-        // ( or ) we can reuse the generic interface provided by java which has the same signature as of our interface NameList
-
     }
 
-    static void printAll(List<Person> peopleList,Namefilter condition){
+    static void printAll(List<Person> peopleList,Predicate<Person> condition){
         for(Person p : peopleList){
             if(condition.test(p)) {
                 System.out.println(p);
