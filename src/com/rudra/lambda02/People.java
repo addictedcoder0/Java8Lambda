@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class People {
     // init a Dummy list of Persons to work with
-    private List<Person> people = Arrays.asList(
+    private static List<Person> people = Arrays.asList(
             new Person("ronny","Caroll",25),
             new Person("Christie","Carlyle",45),
             new Person("john","cena",65),
@@ -16,7 +16,7 @@ public class People {
             new Person("charles","Dickens",22)
     );
 
-    public List<Person> getPeople() {
+    public static List<Person> getPeople() {
         return people;
     }
 
