@@ -9,11 +9,12 @@ public class Person {
     private String firstName;
     private String lastname;
     private int age;
-
-    public Person(String firstName, String lastname, int age) {
+    private Gender gender;
+    public Person(String firstName, String lastname, int age ,Gender gender) {
         this.firstName = firstName;
         this.lastname = lastname;
         this.age = age;
+        this.gender = gender;
     }
 
     public void setFirstName(String firstName) {
@@ -40,8 +41,12 @@ public class Person {
         return age;
     }
 
+    public Gender getGender() {
+        return gender;
+    }
+
     @Override
     public String toString() {
-        return "\nPerson [ firstName : "+getFirstName()+" , lastName : "+getLastname()+" , Age : "+getAge() +" ]";
+        return "\nPerson [ firstName : "+getFirstName()+" , lastName : "+getLastname()+" , Age : "+getAge() +" Gender : "+getGender()+" ]";
     }
 }
